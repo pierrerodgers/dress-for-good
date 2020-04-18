@@ -2,3 +2,7 @@ img {
     max-width:100%;
     height:auto;
 }
+
+#modules-list .card {
+    margin-bottom: 10px;
+}

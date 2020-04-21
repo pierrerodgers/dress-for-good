@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+{% extends "layout.html" %}
+
+
+{% block content %}
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="/static/question.js"></script>
+
+<div class = "container-fluid">
+    <div class = "row">
+        <div class ="col-12">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Back</a>
+                </li>
+                <li class="nav-item">
+                  <p class = "nav-link"><b>Question 1</b></p>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Next</a>
+                </li>
+              </ul>
+        </div>
+    </div>
+
+
+    <div class = "row mb-2">
+        <div class = "col-12">
+            <h4>You need a new pair of pants to wear casually on weekends. Rank these options.</h4>
+        </div>
+    </div>
+
+    <div class = "row mb-4 no-gutters" id = "options">
+        <div class = "col-4 option">
+            <img src = "/static/images/denim.jpg">
+            <h5>Denim jeans</h5>
+        </div>
+
+        <div class = "col-4 option">
+            <img src = "/static/images/linen.jpg">
+            <h5>Linen pants</h5>
+        </div>
+
+        <div class = "col-4 option">
+            <img src = "/static/images/linen.jpg">
+            <h5>Linen pants</h5>
+        </div>
+    </div>
+
+
+    <div class = "row no-gutters" id = "answers">
+        <div class = "col-4 answer">
+
+        </div>
+
+        <div class = "col-4 answer">
+            
+        </div>
+
+        <div class = "col-4 answer">
+            
+        </div>
+    </div>
+
+
+
+</div>
+
+
+{% endblock %}

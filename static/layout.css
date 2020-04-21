@@ -6,3 +6,16 @@ img {
 #modules-list .card {
     margin-bottom: 10px;
 }
+
+.option {
+    border-color: grey;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.answer {
+    border-color: grey;
+    border-style: solid;
+    border-width: 2px;
+    height: 200px;
+}

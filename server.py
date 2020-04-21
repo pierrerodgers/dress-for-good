@@ -13,7 +13,15 @@ def learn(name=None):
     
     return render_template('learn.html')
 
+@app.route('/quiz')
+def quiz(name=None):
+    
+    return render_template('quiz.html')
 
+@app.route('/quiz/<id>')
+def question(id=id):
+
+    return render_template('question.html')
 
 if __name__ == '__main__':
    app.run(debug = True, host='0.0.0.0')

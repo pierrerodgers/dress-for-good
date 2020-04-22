@@ -19,3 +19,14 @@ img {
     border-width: 2px;
     height: 200px;
 }
+
+.empty-div {
+    border-color: grey;
+    border-style: solid;
+    border-width: 2px;
+    height: 200px;
+}
+
+.answer-filled {
+
+}

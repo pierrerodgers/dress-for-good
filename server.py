@@ -23,5 +23,10 @@ def question(id=id):
 
     return render_template('question.html')
 
+@app.route('/learn/<id>')
+def module(id=id):
+
+    return render_template('module.html')
+
 if __name__ == '__main__':
    app.run(debug = True, host='0.0.0.0')

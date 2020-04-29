@@ -8,6 +8,12 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="/static/question.js"></script>
 
+<style>
+    img {
+        max-height: 300px;
+    }
+</style>
+
 <div class = "container-fluid">
     <div class = "row">
         <div class ="col-12">
@@ -37,7 +43,7 @@
     </div>
 
 
-    <div class = "row no-gutters" id = "answers">
+    <div class = "row no-gutters mb-4" id = "answers">
         <div class = "col-4 answer" quizid = '1'>
 
         </div>
@@ -49,6 +55,23 @@
         <div class = "col-4 answer" quizid = '3'>
             
         </div>
+    </div>
+
+    <div class = "row mb-4" id = "buttons">
+        <div class = "col-6 col-md-0">
+
+        </div>
+        <div class = "col-6 col-md-12">
+            <button type="button" class="btn btn-outline-danger" id = "reset" disabled=true>Reset</button>
+            <button type="button" class="btn btn-outline-primary" id = "submit" disabled=true>Submit</button>
+            <button type="button" class="btn btn-outline-secondary" id = "solution">See solution</button>
+        </div>
+        
+        
+    </div>
+
+    <div class = "row no-gutters mb-4" id = "solutions">
+
     </div>
 
 

@@ -2,36 +2,39 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+<script>
+    var modules_received = {{module|tojson}};
+    var module = modules_received["module"];
+</script>
+<script src="/static/module.js"></script>
 <body>
     <div class = "container-fluid">
         <div class = "row">
             <div class ="col-12">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Back</a>
+                        <a class="nav-link" id = "module_back" href="#">Back</a>
                     </li>
                     <li class="nav-item">
-                    <p class = "nav-link"><b>Module 1</b></p>
+                        <p class = "nav-link" id = "module_number"><b>Module 1</b></p>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Next</a>
+                        <a class="nav-link" href="" id = "module_next">Next</a>
                     </li>
                 </ul>
             </div>
             
             <div class = "col-md-6 col-sm-12">
-                <h1>Production Methods</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.                </p>
+                <h1 id = "module_title"></h1>
+                <p id = "module_description"></p>
                 <h4>Key things to remember:</h4>
-                <ul>
-                    <li>Different production methods have varying environmental impacts</li>
-                    <li>You'll often have to search for information about individual brands</li>
+                <ul id = "module_key_points">
+                    
                     
                 </ul>
             </div>
             <div class = "col-md-6 col-sm-12">
-                <img src="/static/images/denim.jpg">
+                <img id = "module_img">
             </div>
         </div>
 

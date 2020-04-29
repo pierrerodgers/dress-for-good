@@ -1,7 +1,19 @@
+/*
+originalOptions to be filled from flask backend server
+solutions to be filled from flask backend server
+
+*/
+
 var originalOptions = {
     0 : '<div class = "col-4 option" quizid = "0"> <img src = "/static/images/everlane.png">Sustainable fashion brand pants</div>',
     1 : '<div class = "col-4 option" quizid = "1"> <img src = "/static/images/hemp.jpg">Hemp pants</div>',
     2 : '<div class = "col-4 option" quizid = "2"> <img src = "/static/images/denim.jpg"><h5>Denim pants</h5></div>'
+};
+
+var solutions = {
+    0: 2,
+    1 : 0,
+    2 : 1
 };
 
 var options = {
@@ -16,11 +28,7 @@ var answers = {
     2 : null
 };
 
-var solutions = {
-    0: 2,
-    1 : 0,
-    2 : 1
-};
+
 
 $(document).ready( function() {
     updateView();

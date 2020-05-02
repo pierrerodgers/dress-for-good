@@ -13,7 +13,24 @@ sustainability_modules = [
         "module_next": "/learn/sustainability/2",
         "module_number": "Module 1",
         "module_back": None,
-        "completed": False
+        "completed": False,
+        "module_examples" : [
+            {
+                "name": "DenimJeans",
+                "title": "Denim Jeans",
+                "img" : "/static/images/denim.jpg",
+                "description": "Guess how sustainable this item is",
+                "answer" : 1,
+                "answer_description": "According to Levi Strauss & co, producing one pair of Levi jeans requires a staggering 3781 litres of water"
+            },
+            {
+                "name": "HempPants",
+                "title" : "Hemp pants",
+                "img" : "/static/images/hemp.jpg",
+                "description": "Guess how sustainable this item is",
+                "answer" : 4
+            }
+        ]
     },
     {
         "module_title": "Materials",
@@ -25,7 +42,24 @@ sustainability_modules = [
         "module_next": "/learn/sustainability/3",
         "module_number": "Module 2",
         "module_back": "/learn/sustainability/1",
-        "completed": False
+        "completed": False,
+        "module_examples" : [
+            {
+                "name": "DenimJeans",
+                "title": "Denim Jeans",
+                "img" : "/static/images/denim.jpg",
+                "description": "Guess how sustainable this item is",
+                "answer" : 1,
+                "answer_description": "According to Levi Strauss & co, producing one pair of Levi jeans requires a staggering 3781 litres of water"
+            },
+            {
+                "name": "HempPants",
+                "title" : "Hemp pants",
+                "img" : "/static/images/hemp.jpg",
+                "description": "Guess how sustainable this item is",
+                "answer" : 4
+            }
+        ]
     },
 
     {
@@ -38,7 +72,24 @@ sustainability_modules = [
         "module_next": "/learn/sustainability/4",
         "module_number": "Module 3",
         "module_back": "/learn/sustainability/2",
-        "completed": False
+        "completed": False,
+        "module_examples" : [
+            {
+                "name": "DenimJeans",
+                "title": "Denim Jeans",
+                "img" : "/static/images/denim.jpg",
+                "description": "Guess how sustainable this item is",
+                "answer" : 1,
+                "answer_description": "According to Levi Strauss & co, producing one pair of Levi jeans requires a staggering 3781 litres of water"
+            },
+            {
+                "name": "HempPants",
+                "title" : "Hemp pants",
+                "img" : "/static/images/hemp.jpg",
+                "description": "Guess how sustainable this item is",
+                "answer" : 4
+            }
+        ]
     },
     {
         "module_title": "Brands",
@@ -50,7 +101,24 @@ sustainability_modules = [
         "module_next": None,
         "module_number": "Module 4",
         "module_back": "/learn/sustainability/3",
-        "completed": False
+        "completed": False,
+        "module_examples" : [
+            {
+                "name": "DenimJeans",
+                "title": "Denim Jeans",
+                "img" : "/static/images/denim.jpg",
+                "description": "Guess how sustainable this item is",
+                "answer" : 1,
+                "answer_description": "According to Levi Strauss & co, producing one pair of Levi jeans requires a staggering 3781 litres of water"
+            },
+            {
+                "name": "HempPants",
+                "title" : "Hemp pants",
+                "img" : "/static/images/hemp.jpg",
+                "description": "Guess how sustainable this item is",
+                "answer" : 4
+            }
+        ]
     }
 ]
 

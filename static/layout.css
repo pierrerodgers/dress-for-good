@@ -30,3 +30,11 @@ img {
 .answer-filled {
 
 }
+
+.star {
+    max-width: 30px;
+}
+
+.star-answer {
+    max-width: 30px;
+}

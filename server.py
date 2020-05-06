@@ -132,6 +132,15 @@ questions = [
                 2: {"title": "Hemp pants", "img" : "/static/images/hemp.jpg"}
             },
             "solutions" : { 0 : 1, 1: 0, 2 : 2}
+        },
+        {
+            "original_options": 
+            {
+                0: {"title" : "Polyester", "img" : "/static/images/polyester.jpeg"},
+                1 : {"title": "Recycled cotton", "img" : "/static/images/recycled-cotton.jpg"},
+                2: {"title": "Normal cotton", "img" : "/static/images/cotton.jpg"}
+            },
+            "solutions" : { 0 : 1, 1: 0, 2 : 2}
         }
     ]
 

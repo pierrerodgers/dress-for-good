@@ -35,6 +35,7 @@
 var originalOptions = {};
 var solutions = {};
 var questionNumber = 0;
+var questionsCount;
 
 var options = {
     0 : 0,
@@ -51,20 +52,14 @@ var answers = {
 
 
 $(document).ready( function() {
-    
+    questionsCount = questionsArray.length;
+
     updateView();
 
+    
+
     $("#reset").click( function() {
-        for (const id in options) {
-            options[id] = id;
-        }
-
-        for (const id in answers) {
-            answers[id] = null;
-        }
-
-        updateView();
-
+        reset();
     });
 
     $("#submit").click( function () {
@@ -74,6 +69,18 @@ $(document).ready( function() {
 
 
 })
+
+function reset() {
+    for (const id in options) {
+        options[id] = id;
+    }
+
+    for (const id in answers) {
+        answers[id] = null;
+    }
+
+    updateView();
+}
 
 function showSolutions() {
     $("#options").hide();
@@ -89,6 +96,29 @@ function showSolutions() {
 }
 
 function updateView() {
+    $("#question_next, #question_back").removeClass('disabled');
+
+    $("#question_back").off().click(function () {
+        questionNumber--;
+        reset();
+    });
+    
+    $("#question_next").off().click(function() {
+        questionNumber++;
+        reset();
+    });
+    if (questionNumber == (questionsCount-1)) {
+        $("#question_next").addClass('disabled');
+        $("#question_next").off();
+    }
+    if (questionNumber == 0) {
+        $("#question_back").addClass('disabled');
+        $("#question_back").off();
+    }
+    //Update nav bar
+    $("#question_number").html(`Question ${questionNumber+1}`);
+
+    console.log(questionNumber);
     // Remove all divs from options and answers
     originalOptions = questionsArray[questionNumber]["original_options"];
     solutions = questionsArray[questionNumber]["solutions"];

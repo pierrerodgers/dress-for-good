@@ -6,6 +6,9 @@
 {% block content %}
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    var questionsArray = {{questions|tojson}};
+</script>
 <script src="/static/question.js"></script>
 
 <style>
@@ -13,6 +16,7 @@
         max-height: 300px;
     }
 </style>
+
 
 <div class = "container-fluid">
     <div class = "row">

@@ -1,20 +1,40 @@
+
 /*
-originalOptions to be filled from flask backend server
-solutions to be filled from flask backend server
+    flask backend to provide array in this format:
+
+    [
+        {
+            "original_options": 
+            {
+                0: {"title" : "Sustainable fashion brand", "img" : "/static/images/everlane.jpg"},
+                1 : {"title"}...
+            },
+            "solutions" :
+            { 0 : 2, 1: 0, 2 : 1}
+        },
+
+        {
+            "original_options": 
+            {
+                0: {"title" : "Sustainable fashion brand", "img" : "/static/images/everlane.jpg"},
+                1 : {"title"}...
+            },
+            "solutions" :
+            { 0 : 2, 1: 0, 2 : 1}
+        },
+    ]
 
 */
 
-var originalOptions = {
+/*var originalOptions = {
     0 : '<div class = "col-4 option" quizid = "0"> <img src = "/static/images/everlane.png">Sustainable fashion brand pants</div>',
     1 : '<div class = "col-4 option" quizid = "1"> <img src = "/static/images/hemp.jpg">Hemp pants</div>',
     2 : '<div class = "col-4 option" quizid = "2"> <img src = "/static/images/denim.jpg"><h5>Denim pants</h5></div>'
-};
+};*/
 
-var solutions = {
-    0: 2,
-    1 : 0,
-    2 : 1
-};
+var originalOptions = {};
+var solutions = {};
+var questionNumber = 0;
 
 var options = {
     0 : 0,
@@ -31,6 +51,7 @@ var answers = {
 
 
 $(document).ready( function() {
+    
     updateView();
 
     $("#reset").click( function() {
@@ -58,7 +79,7 @@ function showSolutions() {
     $("#options").hide();
     $("#answers").prop('disabled', true);
     for (const id in solutions) {
-        $("#solutions").append(originalOptions[solutions[id]]);
+        $("#solutions").append(createOption(originalOptions[solutions[id]]["title"],originalOptions[solutions[id]]["img"]));
     }
     var score = 0;
     for (const id in answers) {
@@ -69,8 +90,11 @@ function showSolutions() {
 
 function updateView() {
     // Remove all divs from options and answers
-    console.log(options);
-    console.log(answers);
+    originalOptions = questionsArray[questionNumber]["original_options"];
+    solutions = questionsArray[questionNumber]["solutions"];
+    console.log(solutions);
+
+
     $("#options").empty();
     $("#answers").empty();
     $("#solutions").empty();
@@ -82,7 +106,7 @@ function updateView() {
             $("#options").append(`<div class = "answer col-4" orderid = "${id}"> </div>`);
         }
         else {
-            var option = $.parseHTML(originalOptions[options[id]]);
+            var option = createOption(originalOptions[options[id]]["title"], originalOptions[options[id]]["img"]);
             $(option).attr('orderid', id);
             $("#options").append(option);
         }
@@ -96,7 +120,7 @@ function updateView() {
         }
         else {
             numberOfAnswers++;
-            var option = $.parseHTML(originalOptions[answers[id]]);
+            var option = createOption(originalOptions[answers[id]]["title"], originalOptions[answers[id]]["img"]);
             $(option).attr('orderid', id);
             console.log(option);
             $("#answers").append(option);
@@ -137,6 +161,15 @@ function updateView() {
             acceptDrop(event.target, ui.draggable, $(event.target).parent().attr('id'), $(ui.draggable).parent().attr('id'));
         }
     });
+}
+
+function createOption(title, img) {
+    
+    var $option = $("<div class = 'col-4 option'>");
+    var $img = $(`<img src = "${img}">`);
+    var $title = $(`<h5> ${title} </h5>`);
+    $($option).append($img, $title);
+    return $option;
 }
 
 function acceptDrop(target, origin, targetparentid, dropparentid) {

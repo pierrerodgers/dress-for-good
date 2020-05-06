@@ -122,22 +122,18 @@ sustainability_modules = [
     }
 ]
 
-clothing_modules = [
 
-    {
-        "module_title": "Production Methods",
-        "module_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "module_key_points": ["Different production methods have varying environmental impacts", "You'll often have to search for information about individual brands"],
-        "module_img" : "/static/images/denim.jpg",
-        "module_next": "/learn/2",
-        "module_number": "Module 1",
-        "module_back": None,
-        "completed": False
-    }
-
-]
-
-
+questions = [
+        {
+            "original_options": 
+            {
+                0: {"title" : "Sustainable fashion brand", "img" : "/static/images/everlane.png"},
+                1 : {"title": "Denim Jeans", "img" : "/static/images/denim.jpg"},
+                2: {"title": "Hemp pants", "img" : "/static/images/hemp.jpg"}
+            },
+            "solutions" : { 0 : 1, 1: 0, 2 : 2}
+        }
+    ]
 
 
 
@@ -158,8 +154,8 @@ def quiz(name=None):
 
 @app.route('/quiz/<id>')
 def question(id=id):
-
-    return render_template('question.html')
+    
+    return render_template('question.html', questions = questions)
 
 @app.route('/learn/sustainability/<id>')
 def module(id=id):

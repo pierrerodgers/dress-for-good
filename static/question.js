@@ -1,41 +1,9 @@
 
-/*
-    flask backend to provide array in this format:
-
-    [
-        {
-            "original_options": 
-            {
-                0: {"title" : "Sustainable fashion brand", "img" : "/static/images/everlane.jpg"},
-                1 : {"title"}...
-            },
-            "solutions" :
-            { 0 : 2, 1: 0, 2 : 1}
-        },
-
-        {
-            "original_options": 
-            {
-                0: {"title" : "Sustainable fashion brand", "img" : "/static/images/everlane.jpg"},
-                1 : {"title"}...
-            },
-            "solutions" :
-            { 0 : 2, 1: 0, 2 : 1}
-        },
-    ]
-
-*/
-
-/*var originalOptions = {
-    0 : '<div class = "col-4 option" quizid = "0"> <img src = "/static/images/everlane.png">Sustainable fashion brand pants</div>',
-    1 : '<div class = "col-4 option" quizid = "1"> <img src = "/static/images/hemp.jpg">Hemp pants</div>',
-    2 : '<div class = "col-4 option" quizid = "2"> <img src = "/static/images/denim.jpg"><h5>Denim pants</h5></div>'
-};*/
-
 var originalOptions = {};
 var solutions = {};
 var questionNumber = 0;
 var questionsCount;
+var totalScore = 0;
 
 var options = {
     0 : 0,
@@ -48,6 +16,7 @@ var answers = {
     1 : null,
     2 : null
 };
+
 
 
 
@@ -85,24 +54,52 @@ function reset() {
 function showSolutions() {
     $("#options").hide();
     $("#answers").prop('disabled', true);
+
     for (const id in solutions) {
         $("#solutions").append(createOption(originalOptions[solutions[id]]["title"],originalOptions[solutions[id]]["img"]));
     }
+
     var score = 0;
     for (const id in answers) {
         if (answers[id] == solutions[id]) score++;
     }
+    totalScore += score;
     $("#solutions").append(`<h3>You scored ${score}</h3>`)
+    $("#solutions").append(`<p>${questionsArray[questionNumber]["explanation"]}`);
+    var $next = $(`<button type="button" class="btn btn-outline-primary"> Next </button>`);
+    $($next).off().click(function() {
+        if (questionNumber == questionsCount - 1) {
+            // Move to final page
+            $("#question_heading, #options, #answers, #buttons").hide();
+            $("#solutions").empty();
+            var $endText = $("<div class = 'col-12'>");
+            $($endText).append(`<h4>Well done! You scored ${totalScore} out of ${3*questionsCount}.</h4>`);
+            $($endText).append(`<p>To learn more, check out the modules again, or check out one of the resources below to continue 
+            your sustainability journey!</p>`)
+            $("#solutions").append($endText);
+
+        }
+        else {
+            questionNumber++;
+            reset();
+        }
+        
+    });
+    $("#solutions").append($next);
 }
 
 function updateView() {
+    //Update Nav bar
     $("#question_next, #question_back").removeClass('disabled');
-
+/*
     $("#question_back").off().click(function () {
         questionNumber--;
         reset();
     });
-    
+
+    HTML : <a class="nav-link" id = "question_back" href="#">Back</a>
+
+*/  
     $("#question_next").off().click(function() {
         questionNumber++;
         reset();
@@ -115,21 +112,26 @@ function updateView() {
         $("#question_back").addClass('disabled');
         $("#question_back").off();
     }
-    //Update nav bar
+
+    
+    
     $("#question_number").html(`Question ${questionNumber+1}`);
 
-    console.log(questionNumber);
-    // Remove all divs from options and answers
+    //Update score
+    $("#score").html(`Current score: ${totalScore}`);
+
     originalOptions = questionsArray[questionNumber]["original_options"];
     solutions = questionsArray[questionNumber]["solutions"];
-    console.log(solutions);
 
-
+    // Remove all divs from options and answers
     $("#options").empty();
     $("#answers").empty();
     $("#solutions").empty();
     $("#options").show();
 
+    // Fill options and answers
+    $("#question_title").empty();
+    $("#question_title").append(`<h4>${questionsArray[questionNumber]["title"]}</h4><br><p>Rank these options.</p>`)
 
     for (const id in options) {
         if (options[id] == null) {
@@ -175,7 +177,7 @@ function updateView() {
         $("#submit").prop('disabled', true);
 
     }
-
+    //Make options draggable
     $(".option").draggable({
         selector:"",
         cursor:'move',
@@ -191,6 +193,8 @@ function updateView() {
             acceptDrop(event.target, ui.draggable, $(event.target).parent().attr('id'), $(ui.draggable).parent().attr('id'));
         }
     });
+
+
 }
 
 function createOption(title, img) {

@@ -131,7 +131,9 @@ questions = [
                 1 : {"title": "Denim Jeans", "img" : "/static/images/denim.jpg"},
                 2: {"title": "Hemp pants", "img" : "/static/images/hemp.jpg"}
             },
-            "solutions" : { 0 : 1, 1: 0, 2 : 2}
+            "solutions" : { 0 : 1, 1: 0, 2 : 2},
+            "title" : "You need a pair of pants to wear at the weekend.",
+            "explanation" : "Denim jeans are the least sustainable due to the amount of water it takes to make them. Sustainable fashion brand pants (for example, Everlane), depend heavily on the exact style and brand -- it's always best to do your own research. Hemp wins this round as it is consistently rated one of the most sustainable materials."
         },
         {
             "original_options": 
@@ -140,7 +142,9 @@ questions = [
                 1 : {"title": "Recycled cotton", "img" : "/static/images/recycled-cotton.jpg"},
                 2: {"title": "Normal cotton", "img" : "/static/images/cotton.jpg"}
             },
-            "solutions" : { 0 : 1, 1: 0, 2 : 2}
+            "solutions" : { 0 : 1, 1: 0, 2 : 2},
+            "title": "Which of these materials is most sustainable?",
+            "explanation": "Recycled cotton wins (the fact that it's recycled means it's contributing less to emissions. Polyester and normal cotton are pretty close (and both not great), but cotton wins out."
         }
     ]
 

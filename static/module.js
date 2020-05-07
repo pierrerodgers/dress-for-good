@@ -105,12 +105,12 @@ function addQuizExample(example) {
             </div>
     */
 
-    var $example = $(`<div class = 'col-md-6' id = "${example["name"]}">`);
+    var $example = $(`<div class = 'col-md-6 mb-1' id = "${example["name"]}">`);
     var $row = $(`<div class = 'row'>`);
     
     
     var $text_col = $("<div class = 'col-md-6'>");
-    $text_col.html(`<h4>${example["name"]}</h4> <p> ${example["description"]}</p>`);
+    $text_col.html(`<h4>${example["title"]}</h4> <p> Guess how sustainable this item is:</p>`);
     var $rating_quiz = $(`<div class = 'rating-guess' example="${example["name"]}">`)
     var i = 1;
     while (i<=5) {

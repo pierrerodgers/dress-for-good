@@ -19,7 +19,7 @@ sustainability_modules = [
             {
                 "name": "DenimJeans",
                 "title": "Denim Jeans",
-                "img" : "/static/images/denim.jpg",
+                "img" : "/static/images/denim_jeans.jpg",
                 "description": "Guess how sustainable this item is",
                 "answer" : 1,
                 "answer_description": "According to Levi Strauss & co, producing one pair of Levi jeans requires a staggering 3781 litres of water"
@@ -105,7 +105,7 @@ sustainability_modules = [
             {
                 "name": "Onlineshopping",
                 "title": "Online Shopping",
-                "img" : "/static/images/online.jpg",
+                "img" : "/static/images/online_shopping.jpg",
                 "answer" : 2,
                 "answer_description": "Online shopping has more environmental impact than you may realise. With emissions caused by delivery and returns, be careful buying too much online!"
             },
@@ -147,7 +147,7 @@ sustainability_modules = [
             {
                 "name": "MoreExpensive",
                 "title" : "More expensive brands",
-                "img" : "/static/images/everlane.png",
+                "img" : "/static/images/expensive_brands.jpg",
                 "answer_description": "While not always true, as a general rule, more expensive brands tend to carry higher quality clothing – consider investing in one or two high quality pieces that last a long time rather than many more cheap pieces.",
                 "answer" : 3
             }
@@ -160,9 +160,9 @@ questions = [
         {
             "original_options": 
             {
-                0: {"title" : "Sustainable fashion brand", "img" : "/static/images/everlane.png"},
-                1 : {"title": "Denim Jeans", "img" : "/static/images/denim.jpg"},
-                2: {"title": "Hemp pants", "img" : "/static/images/hemp.jpg"}
+                0: {"title" : "Sustainable fashion brand pants", "img" : "/static/images/everlane_pants.jpg"},
+                1 : {"title": "Denim Jeans", "img" : "/static/images/denim_jeans.jpg"},
+                2: {"title": "Hemp pants", "img" : "/static/images/hemp_pants.jpg"}
             },
             "solutions" : { 0 : 1, 1: 0, 2 : 2},
             "title" : "You need a pair of pants to wear at the weekend.",
@@ -178,6 +178,36 @@ questions = [
             "solutions" : { 0 : 1, 1: 0, 2 : 2},
             "title": "Which of these materials is most sustainable?",
             "explanation": "Recycled cotton wins (the fact that it's recycled means it's contributing less to emissions. Polyester and normal cotton are pretty close (and both not great), but cotton wins out."
+        },
+        {
+            "original_options": {
+                0 : {"title": "Buy a Champion sweatshirt online.", "img" : "/static/images/champion_sweatshirt.jpg"},
+                1 : {"title" : "Go to the Columbia bookstore", "img" : "/static/images/columbia_sweatshirt.jpg"},
+                2: {"title": "Buy one from a Goodwill", "img" : "/static/images/goodwill.jpg"}
+            },
+            "solutions" : { 0 : 0, 1: 1, 2: 2},
+            "title": "You want a new sweatshirt. Which is the best way to buy it?",
+            "explanation": "Buying second hand helps prevent excess emissions and environmental impact. But if you have to buy new, try to buy in store instead of online!"
+        },
+        {
+            "original_options": {
+                0 : {"title": "Tee from H&M", "img" : "/static/images/handm.jpg"},
+                1 : {"title" : "Organic cotten tee from Everlane", "img" : "/static/images/everlane_tee.jpg"},
+                2: {"title": "Hemp polo shirt", "img" : "/static/images/hemp_polo.jpg"}
+            },
+            "solutions" : { 0 : 0, 1: 1, 2: 2},
+            "title": "You're headed to the beach and you want something cool to wear.",
+            "explanation": "The hemp wins out: it's the most sustainable fabric here! The everlane organic cotton shirt beats the H&M shirt -- it's more versatile and is likely to last longer!"
+        },
+        {
+            "original_options": {
+                0 : {"title": "Everlane Recycled Down Jacket", "img" : "/static/images/everlane_puffer.jpg"},
+                1 : {"title" : "Jacket you found at a vintage store in Brooklyn", "img" : "/static/images/vintage_brooklyn.jpg"},
+                2: {"title": "North Face Jacket", "img" : "/static/images/northface_puffer.jpg"}
+            },
+            "solutions" : { 0 : 0, 1: 1, 2: 2},
+            "title": "You're looking for a warm winter jacket!",
+            "explanation": "Once again, the second-hand choice wins. Next is the Everlane jacket, due to recycled materials, and last is the North Face jacket."
         }
     ]
 

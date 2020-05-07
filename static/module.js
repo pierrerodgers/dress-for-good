@@ -38,9 +38,14 @@ $(document).ready(function() {
         showAnswer(exampleName, starNumber);
     });
 
-    (module["module_next"] != null) ? $(`#module_next`).attr('href', module["module_next"]) : $("#moudle_next").attr('disabled', true);
+    console.log("module_next" + module["module_next"]);
+
+
+    
+    (module["module_next"] != null) ? $(`#module_next`).attr('href', module["module_next"]) : $("#module_next").attr('href', "/quiz");
     (module["module_back"] != null) ? $(`#module_back`).attr('href', module["module_back"]) : $("module_back").attr('disabled', true);
 
+    
 
 
 
@@ -73,37 +78,6 @@ function showAnswer(exampleName, guess) {
 }
 
 function addQuizExample(example) {
-    /*
-        {
-            "name": "Denim jeans",
-            "img" : "static//images/denim.jpg",
-            "description": "Guess how sustainable this item is",
-            "rating" : 1
-        }
-
-
-        <div class = "col-md-6" id = "denim">
-                <div class = "row">
-                    <div class = "col-md-6">
-                        <h4>Denim jeans</h4>
-                        <p>Guess how sustainable this item is</p>
-                        <div class = "rating-guess" example = "Denim jeans">
-                            <img class = "star" id = "star1" src="/static/images/star.png">
-                            <img class = "star" id = "star2" src="/static/images/star.png">
-                            <img class = "star" id = "star3" src="/static/images/star.png">
-                            <img class = "star" id = "star4" src="/static/images/star.png">
-                            <img class = "star" id = "star5" src="/static/images/star.png">
-                        </div>
-                        <div class = "rating-answer" example = "Denim jeans">
-                        </div>
-                    </div>
-                    <div class = "col-md-6">
-                        <img src = "/static/images/denim.jpg">
-                    </div>
-                </div>
-                
-            </div>
-    */
 
     var $example = $(`<div class = 'col-md-6 mb-1' id = "${example["name"]}">`);
     var $row = $(`<div class = 'row'>`);
